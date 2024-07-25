@@ -202,7 +202,7 @@ for (let i = 0; i < data.events.length; i++) {
     let tarjeta = document.createElement("div");
     tarjeta.className = "card";
     tarjeta.innerHTML = `
-    <img src="${evento.image}" class="card-img-top" alt="${evento.name}"/>
+    <img src="${evento.image}" class="card-img-top" alt="${evento.name}" style="object-fit: cover;"/>
     <div class="card-body">
         <h1 class="card-title">${evento.name}</h1>
         <p class="card-text">Description: ${evento.description}</p>
