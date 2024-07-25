@@ -1,0 +1,45 @@
+.navbar{
+    background-color: gray;
+}
+
+.logo{
+    height: 50px;
+}
+
+
+.caur-img{
+    height: 200px;
+   
+}
+
+
+.card{
+    width: 400px;
+}
+
+.card-img-top {
+    height: 200px;
+} 
+
+.carousel-caption{
+    height: 100%;
+}
+
+
+.custom-form-width {
+    width: 20%; 
+    max-width:700px;
+}
+
+td {
+    min-width: 150px;
+    height: 50px; 
+}
+
+.table-bordered td, .table-bordered th {
+    border: 2px solid black; }
+td, th {
+    min-width: 100px;
+    height: 50px; 
+    text-align: center;
+}

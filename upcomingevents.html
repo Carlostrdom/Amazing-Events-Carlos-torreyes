@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EVENTS</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/Recursos_Amazing_Events_Task_1/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid d-flex">
+          <a class="navbar-brand" href="/index.html"
+            ><img
+              src="./assets/Recursos_Amazing_Events_Task_1/amazing_brand.png"
+              class="logo"
+              alt=""
+          /></a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <div class="navbar-nav">
+              <a class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
+                  >HOME</a
+                >
+              </a>
+              <a class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="./upcomingevents.html"
+                  >UPCOMING EVENTS</a
+                >
+              </a>
+              <a class="nav-item">
+                <a class="nav-link" aria-current="page" href="./pastevents.html"
+                  >PAST EVENTS</a
+                >
+              </a>
+              <a class="nav-item">
+                <a class="nav-link" aria-current="page" href="./contact.html"
+                  >CONTACT</a
+                > </a
+              ><a class="nav-item">
+                <a class="nav-link" aria-current="page" href="./stats.html"
+                  >STATS</a
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_1.jpg"
+              class="d-block w-100 caur-img object-fit-cover"
+              alt="..."
+            />
+
+            <div
+              class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
+            >
+              <h1 class="text-white bg-dark bg-opacity-50 p-2 rounded">Home</h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_2.jpg"
+              class="d-block w-100 caur-img object-fit-cover"
+            />
+
+            <div
+              class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
+            >
+              <h1 class="text-white bg-dark bg-opacity-50 p-2 rounded">
+                UPCOMING EVENTS
+              </h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_3.jpg"
+              class="d-block w-100 caur-img object-fit-cover"
+              alt="..."
+            />
+            <div
+              class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
+            >
+              <h1 class="text-white bg-dark bg-opacity-50 p-2 rounded">
+                PAST EVENTS
+              </h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_4.jpg"
+              class="d-block w-100 caur-img object-fit-cover"
+              alt="..."
+            />
+            <div
+              class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
+            >
+              <h1 class="text-white bg-dark bg-opacity-50 p-2 rounded">
+                CONTACT
+              </h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_5.jpg"
+              class="d-block w-100 caur-img object-fit-cover"
+              alt="..."
+            />
+            <div
+              class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
+            >
+              <h1 class="text-white bg-dark bg-opacity-50 p-2 rounded">
+                STATS
+              </h1>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="container-fluid d-flex p-2 flex-wrap justify-content-between">
+        <div>
+          <input
+            class="form-check-input bg-primary"
+            type="radio"
+            id="category"
+            value="category"
+            name="category"
+          />
+          <label class="form-check-label" for="category"> Categoty </label>
+        </div>
+
+        <div>
+          <input
+            class="form-check-input bg-primary"
+            type="radio"
+            id="category"
+            value="category"
+            name="category"
+          />
+          <label class="form-check-label" for="category"> Categoty </label>
+        </div>
+        <div>
+          <input
+            class="form-check-input bg-primary"
+            type="radio"
+            id="category"
+            value="category"
+            name="category"
+          />
+          <label class="form-check-label" for="category"> Categoty </label>
+        </div>
+        <div>
+          <input
+            class="form-check-input bg-primary"
+            type="radio"
+            id="category"
+            value="category"
+            name="category"
+          />
+          <label class="form-check-label" for="category"> Categoty </label>
+        </div>
+
+        <div>
+          <input
+            class="form-check-input bg-primary"
+            type="radio"
+            id="category"
+            value="category"
+            name="category"
+          />
+          <label class="form-check-label" for="category"> Categoty </label>
+        </div>
+
+        <div class="input-group mb-3" style="max-width: 300px">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Buscar"
+            aria-label="Example text with button addon"
+            aria-describedby="button-addon1"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon1"
+          >
+            Seach
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="contenedor-card"
+        class="gap-4 container-fluid d-flex mt-4 flex-wrap justify-content-center"
+      ></div>
+    </main>
+    <footer class="d-flex bg-dark text-white justify-content-between mt-5 p-4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-10 col-md-9 d-flex align-items-center">
+            <a class="navbar-brand ml-3 mr-3" href="/index.html">
+              <img
+                src="./assets/Recursos_Amazing_Events_Task_1/facebook.png"
+                class="logo"
+                alt="facebook"
+              />
+              Facebook
+            </a>
+            <a class="navbar-brand ml-3 mr-3" href="/index.html">
+              <img
+                src="./assets/Recursos_Amazing_Events_Task_1/instagram.png"
+                class="logo"
+                alt="instagram"
+              />
+              Instagram
+            </a>
+            <a class="navbar-brand ml-3" href="/index.html">
+              <img
+                src="./assets/Recursos_Amazing_Events_Task_1/whatsapp.png"
+                class="logo"
+                alt="whatsapp"
+              />
+              WhatsApp
+            </a>
+          </div>
+          <div
+            class="col-lg-2 col-md-3 d-flex align-items-center justify-content-end"
+          >
+            <h5 class="text-uppercase font-weight-bold">COHORT</h5>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/upcomingevents.js"></script>
+    <script
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
