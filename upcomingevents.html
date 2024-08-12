@@ -175,82 +175,35 @@
         </button>
       </div>
 
-      <div class="container-fluid d-flex p-2 flex-wrap justify-content-between">
-        <div>
-          <input
-            class="form-check-input bg-primary"
-            type="radio"
-            id="category"
-            value="category"
-            name="category"
-          />
-          <label class="form-check-label" for="category"> Categoty </label>
+      <div class="container-fluid">
+        <div class="d-flex align-items-center mt-3 mb-5">
+          <div class="category-container flex-grow-1">
+            <div
+              id="category-container"
+              class="d-flex flex-wrap justify-content-around"
+            ></div>
+          </div>
+
+          <div class="input-group ml-3" style="max-width: 300px">
+            <input
+              type="text"
+              class="form-control"
+              id="filterText"
+              placeholder="Buscar"
+              aria-label="Buscar"
+              aria-describedby="button-addon1"
+            />
+            <button class="btn btn-outline-secondary" id="button-addon1">
+              Search
+            </button>
+          </div>
         </div>
 
-        <div>
-          <input
-            class="form-check-input bg-primary"
-            type="radio"
-            id="category"
-            value="category"
-            name="category"
-          />
-          <label class="form-check-label" for="category"> Categoty </label>
-        </div>
-        <div>
-          <input
-            class="form-check-input bg-primary"
-            type="radio"
-            id="category"
-            value="category"
-            name="category"
-          />
-          <label class="form-check-label" for="category"> Categoty </label>
-        </div>
-        <div>
-          <input
-            class="form-check-input bg-primary"
-            type="radio"
-            id="category"
-            value="category"
-            name="category"
-          />
-          <label class="form-check-label" for="category"> Categoty </label>
-        </div>
-
-        <div>
-          <input
-            class="form-check-input bg-primary"
-            type="radio"
-            id="category"
-            value="category"
-            name="category"
-          />
-          <label class="form-check-label" for="category"> Categoty </label>
-        </div>
-
-        <div class="input-group mb-3" style="max-width: 300px">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Buscar"
-            aria-label="Example text with button addon"
-            aria-describedby="button-addon1"
-          />
-          <button
-            class="btn btn-outline-secondary"
-            type="button"
-            id="button-addon1"
-          >
-            Seach
-          </button>
-        </div>
+        <div
+          id="contenedor-card"
+          class="gap-4 container-fluid d-flex mt-4 flex-wrap justify-content-center"
+        ></div>
       </div>
-
-      <div
-        id="contenedor-card"
-        class="gap-4 container-fluid d-flex mt-4 flex-wrap justify-content-center"
-      ></div>
     </main>
     <footer class="d-flex bg-dark text-white justify-content-between mt-5 p-4">
       <div class="container-fluid">

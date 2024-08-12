@@ -1,4 +1,20 @@
-.navbar{
+main {
+    min-height:73.5vh;
+    padding-bottom: 60px; }
+  
+  footer {
+    min-height:10vh;
+
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+header{
+    min-height: 9vh;
+}
+  
+
+  .navbar{
     background-color: gray;
 }
 

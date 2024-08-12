@@ -195,9 +195,9 @@ const data = {
     ],
 };
 
-let contenedor = document.getElementById("contenedor-card");
 
 let currentDate = new Date(data.currentDate);
+let array = []
 
 for (let i = 0; i < data.events.length; i++) {
     let evento = data.events[i];
@@ -205,24 +205,131 @@ for (let i = 0; i < data.events.length; i++) {
     let eventDate = new Date(evento.date);
 
     if (eventDate < currentDate) {
-        let tarjeta = document.createElement("div");
-        tarjeta.className = "card";
 
-        tarjeta.innerHTML = `
-        <img src="${evento.image}" class="card-img-top" alt="${evento.name}" style="object-fit: cover;"/>
-        <div class="card-body">
-            <h1 class="card-title">${evento.name}</h1>
-            <p class="card-text">Description: ${evento.description}</p>
-            <p class="card-text">Date: ${evento.date}</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <p>Price: $${evento.price}</p>
-                <a href="./details.html" class="btn btn-primary">Details</a>
-            </div>
-        </div>
-        `;
+        array.push(evento)
 
-        console.log(tarjeta);
-
-        contenedor.appendChild(tarjeta);
     }
 }
+data.events = array
+
+
+
+
+function obtenerCategorias(eventos) {
+    let categorias = [];
+    for (let i = 0; i < eventos.length; i++) {
+        if (!categorias.includes(eventos[i].category)) {
+            categorias.push(eventos[i].category);
+        }
+    }
+    return categorias;
+}
+function crearCheckboxes(categorias) {
+    let contenedorCategorias = document.getElementById('category-container');
+    contenedorCategorias.innerHTML = ''; // Limpiar contenido anterior
+
+    for (let i = 0; i < categorias.length; i++) {
+        let categoria = categorias[i];
+
+        // Crear contenedor para el checkbox y la etiqueta
+        let container = document.createElement('div');
+        container.classList.add('d-inline-flex', 'align-items-center', 'mr-3'); // Añadir espaciado a la derecha
+
+        // Crear el input (checkbox)
+        let input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = `category-${categoria.replace(/\s+/g, '-')}`;
+        input.name = 'category';
+        input.value = categoria;
+        input.classList.add('mr-2'); // Espacio a la derecha del checkbox
+
+        // Crear la etiqueta
+        let label = document.createElement('label');
+        label.htmlFor = input.id;
+        label.textContent = categoria;
+
+        // Añadir el checkbox y la etiqueta al contenedor
+        container.appendChild(input);
+        container.appendChild(label);
+
+        // Añadir el contenedor al contenedor principal
+        contenedorCategorias.appendChild(container);
+    }
+
+    // Agregar evento de escucha para filtrar al hacer clic en los checkboxes
+    contenedorCategorias.addEventListener('change', filtrarEventos);
+}
+
+
+function filtrarEventos() {
+    // Obtener las categorías seleccionadas
+    let categoriasSeleccionadas = Array.from(document.querySelectorAll('input[name=category]:checked')).map(checkbox => checkbox.value);
+
+    // Obtener y normalizar el texto de búsqueda
+    let textoBusqueda = document.getElementById('filterText').value.trim().toLowerCase();
+
+    // Filtrar los eventos
+    let eventosFiltrados = data.events.filter(evento => {
+        // Normalizar los datos del evento
+        let nombreEvento = evento.name.toLowerCase().trim();
+        let descripcionEvento = evento.description.toLowerCase().trim();
+
+        // Verificar si el evento cumple con alguna de las categorías seleccionadas
+        let cumpleCategoria = categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(evento.category);
+
+        // Verificar si el evento cumple con el texto de búsqueda
+        let cumpleBusqueda = nombreEvento.includes(textoBusqueda) || descripcionEvento.includes(textoBusqueda);
+
+        // Devolver true solo si el evento cumple con todos los filtros
+        return cumpleCategoria && cumpleBusqueda;
+    });
+
+    // Mostrar los eventos filtrados
+    mostrarEventos(eventosFiltrados);
+}
+
+// Agregar evento de búsqueda al hacer clic en el botón
+document.getElementById('button-addon1').addEventListener('click', filtrarEventos);
+
+// Agregar evento de búsqueda al presionar Enter en el campo de texto
+document.getElementById('filterText').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Evita que se envíe el formulario si está dentro de uno
+        filtrarEventos();
+    }
+});
+
+
+function mostrarEventos(eventos) {
+    console.log(eventos)
+    let contenedor = document.getElementById('contenedor-card');
+    contenedor.innerHTML = '';
+
+    for (let i = 0; i < eventos.length; i++) {
+        let evento = eventos[i];
+        let tarjeta = document.createElement('div');
+        tarjeta.className = 'card col-md-4 mb-4';
+        tarjeta.innerHTML = `
+            <img src="${evento.image}" class="card-img-top" alt="${evento.name}" style="object-fit: cover;"/>
+            <div class="card-body">
+                <h5 class="card-title">${evento.name}</h5>
+                <p class="card-text">Description: ${evento.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p>Price: $${evento.price}</p>
+                    <a href="./details.html?id=${evento._id}" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        `;
+        contenedor.appendChild(tarjeta);
+    }
+
+    if (eventos.length === 0) {
+        contenedor.innerHTML = '<p>No hay eventos que coincidan con los criterios de búsqueda.</p>';
+    }
+}
+
+document.getElementById('button-addon1').addEventListener('click', filtrarEventos);
+
+let categoriasUnicas = obtenerCategorias(data.events);
+crearCheckboxes(categoriasUnicas);
+mostrarEventos(data.events);
