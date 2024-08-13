@@ -226,75 +226,59 @@ function obtenerCategorias(eventos) {
 }
 function crearCheckboxes(categorias) {
     let contenedorCategorias = document.getElementById('category-container');
-    contenedorCategorias.innerHTML = ''; // Limpiar contenido anterior
+    contenedorCategorias.innerHTML = '';
 
     for (let i = 0; i < categorias.length; i++) {
         let categoria = categorias[i];
 
-        // Crear contenedor para el checkbox y la etiqueta
         let container = document.createElement('div');
-        container.classList.add('d-inline-flex', 'align-items-center', 'mr-3'); // Añadir espaciado a la derecha
+        container.classList.add('d-inline-flex', 'align-items-center', 'mr-3');
 
-        // Crear el input (checkbox)
         let input = document.createElement('input');
         input.type = 'checkbox';
         input.id = `category-${categoria.replace(/\s+/g, '-')}`;
         input.name = 'category';
         input.value = categoria;
-        input.classList.add('mr-2'); // Espacio a la derecha del checkbox
+        input.classList.add('mr-2');
 
-        // Crear la etiqueta
         let label = document.createElement('label');
         label.htmlFor = input.id;
         label.textContent = categoria;
 
-        // Añadir el checkbox y la etiqueta al contenedor
         container.appendChild(input);
         container.appendChild(label);
 
-        // Añadir el contenedor al contenedor principal
         contenedorCategorias.appendChild(container);
     }
 
-    // Agregar evento de escucha para filtrar al hacer clic en los checkboxes
     contenedorCategorias.addEventListener('change', filtrarEventos);
 }
 
 
 function filtrarEventos() {
-    // Obtener las categorías seleccionadas
     let categoriasSeleccionadas = Array.from(document.querySelectorAll('input[name=category]:checked')).map(checkbox => checkbox.value);
 
-    // Obtener y normalizar el texto de búsqueda
     let textoBusqueda = document.getElementById('filterText').value.trim().toLowerCase();
 
-    // Filtrar los eventos
     let eventosFiltrados = data.events.filter(evento => {
-        // Normalizar los datos del evento
         let nombreEvento = evento.name.toLowerCase().trim();
         let descripcionEvento = evento.description.toLowerCase().trim();
 
-        // Verificar si el evento cumple con alguna de las categorías seleccionadas
         let cumpleCategoria = categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(evento.category);
 
-        // Verificar si el evento cumple con el texto de búsqueda
         let cumpleBusqueda = nombreEvento.includes(textoBusqueda) || descripcionEvento.includes(textoBusqueda);
 
-        // Devolver true solo si el evento cumple con todos los filtros
         return cumpleCategoria && cumpleBusqueda;
     });
 
-    // Mostrar los eventos filtrados
     mostrarEventos(eventosFiltrados);
 }
 
-// Agregar evento de búsqueda al hacer clic en el botón
 document.getElementById('button-addon1').addEventListener('click', filtrarEventos);
 
-// Agregar evento de búsqueda al presionar Enter en el campo de texto
 document.getElementById('filterText').addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
-        event.preventDefault(); // Evita que se envíe el formulario si está dentro de uno
+        event.preventDefault();
         filtrarEventos();
     }
 });

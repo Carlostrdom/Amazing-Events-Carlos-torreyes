@@ -233,7 +233,7 @@ function mostrarEventos(eventos, id) {
                 <h5 class="card-title fs-1">Festival of the collectivities</h5>
                 <div class="row">
                   <div class="col">
-                    <p><strong>id:</strong> 1</p>
+                 
                     <p><strong>image:</strong> food_fair.jpg</p>
                     <p><strong>name:</strong> Festival of the collectivities</p>
                     <p><strong>date:</strong> 2022-12-12</p>
