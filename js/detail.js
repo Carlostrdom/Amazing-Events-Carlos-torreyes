@@ -199,22 +199,18 @@ let url = window.location.search
 
 const params = new URLSearchParams(window.location.search);
 const texto = params.get('id');
-console.log(texto)
 
 function mostrarEventos(eventos, id) {
 
     let contenedor = document.getElementById('container-detail');
     contenedor.innerHTML = '';
-    console.log(eventos);
 
 
 
     for (let i = 0; i < eventos.length; i++) {
-        console.log(eventos[i]._id);
 
         if (id == eventos[i]._id) {
 
-            console.log(texto);
 
             let tarjeta = document.createElement('div');
             tarjeta.innerHTML = `         
