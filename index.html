@@ -89,10 +89,9 @@
             <img
               src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_1.jpg"
               class="d-block w-100 caur-img"
-              style="object-fit: cover"
+              style="object-fit: cover; height: 140px"
               alt="sushi"
             />
-
             <div
               class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
             >
@@ -102,9 +101,10 @@
           <div class="carousel-item">
             <img
               src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_2.jpg"
-              class="d-block w-100 caur-img object-fit-cover"
+              class="d-block w-100 caur-img"
+              style="object-fit: cover; height: 140px"
+              alt="Upcoming Events"
             />
-
             <div
               class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
             >
@@ -116,8 +116,9 @@
           <div class="carousel-item">
             <img
               src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_3.jpg"
-              class="d-block w-100 caur-img object-fit-cover"
-              alt="..."
+              class="d-block w-100 caur-img"
+              style="object-fit: cover; height: 140px"
+              alt="Past Events"
             />
             <div
               class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
@@ -130,8 +131,9 @@
           <div class="carousel-item">
             <img
               src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_4.jpg"
-              class="d-block w-100 caur-img object-fit-cover"
-              alt="..."
+              class="d-block w-100 caur-img"
+              style="object-fit: cover; height: 140px"
+              alt="Contact"
             />
             <div
               class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
@@ -144,8 +146,9 @@
           <div class="carousel-item">
             <img
               src="./assets/Recursos_Amazing_Events_Task_1/optional_banner_5.jpg"
-              class="d-block w-100 caur-img object-fit-cover"
-              alt="..."
+              class="d-block w-100 caur-img"
+              style="object-fit: cover; height: 140px"
+              alt="Stats"
             />
             <div
               class="carousel-caption d-flex justify-content-center align-items-start top-0 mt-1"
@@ -177,7 +180,9 @@
       </div>
 
       <div class="container-fluid">
-        <div class="d-flex align-items-center mt-4 mb-5">
+        <div
+          class="d-flex align-items-center bg-dark rounded-3 text-white mt-3 mb-5"
+        >
           <div class="category-container flex-grow-1">
             <div
               id="category-container"
@@ -188,13 +193,16 @@
           <div class="input-group ml-3" style="max-width: 300px">
             <input
               type="text"
-              class="form-control"
+              class="form-control bg-danger-subtle border-0"
               id="filterText"
               placeholder="Buscar"
               aria-label="Buscar"
               aria-describedby="button-addon1"
             />
-            <button class="btn btn-outline-secondary" id="button-addon1">
+            <button
+              class="btn btn-outline-secondary bg-dark bg-gradient"
+              id="button-addon1"
+            >
               Search
             </button>
           </div>
@@ -206,7 +214,9 @@
         ></div>
       </div>
     </main>
-    <footer class="d-flex bg-dark text-white justify-content-between mt-5 p-4">
+    <footer
+      class="container-fluid d-flex bg-dark text-white justify-content-between mt-3 p-4"
+    >
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-10 col-md-9 d-flex align-items-center">
@@ -244,11 +254,11 @@
       </div>
     </footer>
 
-    <script src="./js/home.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/home.js" type="module"></script>
   </body>
 </html>
