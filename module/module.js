@@ -74,10 +74,10 @@ export function mostrarEventos(eventos) {
     for (let i = 0; i < eventos.length; i++) {
         let evento = eventos[i];
         let tarjeta = document.createElement('div');
-        tarjeta.className = 'card col-md-4 mb-4';
+        tarjeta.className = 'card my-card col-md-4 mb-4';
         tarjeta.innerHTML = `
             <img src="${evento.image}" class="card-img-top" alt="${evento.name}" style="object-fit: cover;"/>
-            <div class="card-body">
+            <div class="card-body" style="background-color: #e3f2fd;">
                 <h5 class="card-title">${evento.name}</h5>
                 <p class="card-text">Description: ${evento.description}</p>
                 <div class="d-flex justify-content-between align-items-center">
